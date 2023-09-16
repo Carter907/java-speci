@@ -1,0 +1,14 @@
+
+<div class="m-4 icon-link w-fit">
+    <a  routerLink="">
+        <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
+    </a>
+</div>
+
+
+<div class="grid">
+    <app-category *ngFor="let category of categories; let i = index"
+        [category]="category"
+    >
+    </app-category>
+</div>
