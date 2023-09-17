@@ -1,8 +1,8 @@
 use serde::Serialize;
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 pub struct Question {
     pub code: String,
     pub question: String,
-    pub correct_answer: String,
+    pub answer: String,
 }

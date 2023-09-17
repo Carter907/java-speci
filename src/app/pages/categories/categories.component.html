@@ -7,8 +7,10 @@
 
 
 <div class="grid">
-    <app-category *ngFor="let category of categories; let i = index"
-        [category]="category"
-    >
-    </app-category>
+    <a *ngFor="let category of categories; let i = index" [routerLink]="['/assessment', category.chapter, i]">
+        <app-category
+                [category]="category"
+        ></app-category>
+    </a>
+
 </div>

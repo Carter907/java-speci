@@ -4,6 +4,8 @@ import {map} from 'rxjs/operators'
 import {Observable} from "rxjs";
 import {invoke} from "@tauri-apps/api/tauri";
 import {Assessment} from "../../model/assessment";
+import {Question} from "../../model/question";
+import {AssessmentService} from "../../service/assessment.service";
 
 @Component({
     selector: 'app-assessment',
@@ -11,22 +13,27 @@ import {Assessment} from "../../model/assessment";
     styleUrls: ['./assessment.component.css']
 })
 export class AssessmentComponent implements OnInit {
-    chapter: string = '';
-    assessmentId: string = '';
+    chapter: number = 0;
+    assessmentId: number = 0;
     assessment: Assessment = {
-        questions: {}
+        questions: []
     };
 
-    constructor(private route: ActivatedRoute) {
-        this.route.paramMap.subscribe((params) => {
-            let chapter = params.get("chapter")
-            this.chapter = chapter !== null ? chapter : "";
+    constructor(private route: ActivatedRoute, private service: AssessmentService) {
+        route.paramMap.subscribe((params) => {
+            let chapterStr = params.get('chapter');
+            this.chapter = chapterStr !== null ? Number.parseInt(chapterStr, 10) : 0;
+
+            let assessmentIdStr = params.get("id")
+            this.assessmentId = assessmentIdStr !== null ? Number.parseInt(assessmentIdStr, 10) : 0;
+
+
+            service.getAssessmentQuestions(this.assessmentId).then(questions => {
+                this.assessment.questions = questions;
+            })
         })
-        this.route.paramMap.subscribe((params) => {
-            let assessmentId = params.get("assessmentId")
-            this.assessmentId = assessmentId !== null ? assessmentId : "";
-        })
-        invoke();
+
+
     }
 
     ngOnInit(): void {

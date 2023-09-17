@@ -8,6 +8,6 @@ pub fn get_speci_categories() -> Vec<Category> {
 }
 
 #[tauri::command]
-pub fn get_assessment_questions(id: i32, chapter: i32) -> Vec<Question> {
-   data::get_assessment_questions(id, chapter)
+pub fn get_assessment_questions(id: i64) -> Vec<Question> {
+   data::get_assessment_questions(id)
 }

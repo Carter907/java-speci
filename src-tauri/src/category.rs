@@ -4,5 +4,6 @@ use serde::{Deserialize, Serialize};
 pub struct Category {
     pub title: String,
     pub description: String,
+    pub chapter: i64,
 
 }

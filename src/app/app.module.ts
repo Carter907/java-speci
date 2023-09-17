@@ -9,9 +9,11 @@ import {AppRouterModule} from "./app-router/app-router.module";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CategoryComponent } from './components/category/category.component';
 import { AssessmentComponent } from './pages/assessment/assessment.component';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CategoriesComponent, NavigationComponent, CategoryComponent, AssessmentComponent],
+  declarations: [AppComponent, HomeComponent, CategoriesComponent,
+    NavigationComponent, CategoryComponent, AssessmentComponent, QuestionComponent],
   imports: [BrowserModule, FontAwesomeModule, AppRouterModule
   ],
   providers: [],

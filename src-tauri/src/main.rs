@@ -7,12 +7,15 @@ mod commands;
 mod data;
 
 use commands::get_speci_categories;
+use commands::get_assessment_questions;
 
 
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
-            get_speci_categories
+            get_speci_categories,
+            get_assessment_questions,
+
 
         ])
         .run(tauri::generate_context!())
