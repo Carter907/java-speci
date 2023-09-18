@@ -13,6 +13,7 @@ export class QuestionComponent {
     question: '',
     answer: ''
   }
+  @Input() showAnswer: boolean = false;
 
   constructor(private service: QuestionService) {
 

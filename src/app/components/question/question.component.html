@@ -1,11 +1,11 @@
-<div class="container flex">
-    <div>
+<div class="question">
+    <div class="container p-4 rounded">
         <p>{{question.question}}</p>
     </div>
-    <div>
+    <div *ngIf="!showAnswer" class="container p-4 rounded">
         <p>{{question.answer}}</p>
     </div>
-    <div>
+    <div class="container p-4 rounded">
         <p>{{question.code}}</p>
     </div>
 </div>

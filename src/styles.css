@@ -3,7 +3,7 @@
 @tailwind components;
 
 body {
-    background-color: #383838;
+    @apply bg-base;
     color: #d0d5d9;
 }
 
@@ -14,19 +14,23 @@ body {
 
 }
 .category {
-    @apply flex-col rounded m-5 p-4 w-1/2;
+    @apply flex-col rounded-full p-12;
     @apply transition-all duration-300;
-    @apply shadow-2xl;
-    @apply hover:shadow-blue-400;
+    @apply bg-base-darker;
+    @apply shadow-md;
+    @apply border-2 border-transparent;
+    @apply hover:border-highlight;
 
 }
 
 .icon-link {
     @apply transition-colors duration-300;
     @apply border-transparent;
-    @apply hover:border-blue-700;
-    @apply border-b-2;
-    @apply w-fit;
+    @apply hover:bg-highlight;
+
+    @apply hover:text-base-darker;
+    @apply p-4;
+    @apply rounded-full;
 }
 .link p {
     @apply hover:text-blue-700 text-blue-500 transition-colors duration-300;
@@ -34,7 +38,4 @@ body {
     @apply border-transparent;
     @apply hover:border-blue-700;
     @apply border-b-2;
-}
-fa-icon {
-    @apply translate-y-2;
 }

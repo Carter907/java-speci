@@ -1,13 +1,19 @@
 
-<div class="m-4 icon-link w-fit">
+<div class="m-10 icon-link w-fit fixed ">
     <a  routerLink="">
         <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
     </a>
 </div>
+<div class="p-10 m-auto w-fit">
+    <p class="text-4xl w-fit">
+        Categories
+    </p>
+</div>
 
 
-<div class="grid">
-    <a *ngFor="let category of categories; let i = index" [routerLink]="['/assessment', category.chapter, i]">
+<div class="grid columns-2 px-10 m-4">
+    <a class="w-1/2 p-4 mb-4" *ngFor="let category of categories; let i = index" [routerLink]="['/assessment', category.chapter, i]">
+
         <app-category
                 [category]="category"
         ></app-category>
