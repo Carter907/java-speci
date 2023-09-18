@@ -11,6 +11,7 @@ use commands::get_assessment_questions;
 
 
 fn main() {
+    include_bytes!("../data/jav-speci");
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             get_speci_categories,
