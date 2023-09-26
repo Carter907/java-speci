@@ -5,6 +5,7 @@ mod question;
 mod category;
 mod commands;
 mod data;
+mod assessment;
 
 use commands::get_speci_categories;
 use commands::get_assessment_questions;

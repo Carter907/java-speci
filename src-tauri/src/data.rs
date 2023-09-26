@@ -1,4 +1,5 @@
 use sqlite::{Connection};
+use crate::assessment::Assessment;
 use crate::category::Category;
 use crate::question::Question;
 
@@ -24,6 +25,11 @@ pub fn get_all_categories() -> Vec<Category> {
 
 
     categories
+}
+pub fn get_all_assessments_by_chapter(chapter: i32) {
+    let mut assessments: Vec<Assessment> = vec![];
+    let conn = Connection::open("data/jav-speci");
+    let query = "SELECT question FROM questions WHERE "
 }
 
 pub fn get_assessment_questions(id: i64) -> Vec<Question> {

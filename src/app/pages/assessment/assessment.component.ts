@@ -32,13 +32,14 @@ export class AssessmentComponent implements OnInit {
             let chapterStr = params.get('chapter');
             this.chapter = chapterStr !== null ? Number.parseInt(chapterStr, 10) : 0;
 
-            let assessmentIdStr = params.get("id")
+            let assessmentIdStr = params.get('id')
             this.assessmentId = assessmentIdStr !== null ? Number.parseInt(assessmentIdStr, 10) : 0;
 
 
             service.getAssessmentQuestions(this.assessmentId).then(questions => {
                 this.assessment.questions = questions.reverse();
                 this.setNextQuestion()
+                console.log(this.assessment.questions)
             })
         })
 
