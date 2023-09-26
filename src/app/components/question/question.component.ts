@@ -9,7 +9,7 @@ import {QuestionService} from "../../service/question.service";
 })
 export class QuestionComponent {
   @Input() question: Question = {
-    code: '',
+    code: [],
     question: '',
     answer: ''
   }

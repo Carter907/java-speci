@@ -1,5 +1,5 @@
 export interface Question {
-    code: string,
+    code: string[],
     question: string,
     answer: string,
 }

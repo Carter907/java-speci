@@ -23,7 +23,7 @@ export class AssessmentComponent implements OnInit {
     currentQuestion: Question = {
         answer: '',
         question: '',
-        code: '',
+        code: [],
     };
 
     constructor(private route: ActivatedRoute, private service: AssessmentService) {

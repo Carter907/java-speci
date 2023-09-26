@@ -1,0 +1,20 @@
+<div class="relative h-1/2 w-3/4
+     m-auto p-2 rounded border-2 border-highlighter brightness-75 bg-base-darker">
+    <p class="select-none brightness-50">code...</p>
+    <div class="p-8">
+
+        <ul>
+            <li class="list-item" *ngFor="let line of code; let i = index">
+                <p>
+                    <span class="brightness-50 select-none">
+                        {{i}}
+                    </span>
+                    <span class="ml-8">
+                        {{line}}
+                    </span>
+                </p>
+            </li>
+        </ul>
+    </div>
+
+</div>

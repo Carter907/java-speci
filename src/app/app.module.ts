@@ -10,10 +10,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CategoryComponent } from './components/category/category.component';
 import { AssessmentComponent } from './pages/assessment/assessment.component';
 import { QuestionComponent } from './components/question/question.component';
+import { CodePanelComponent } from './components/code-panel/code-panel.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CategoriesComponent,
-    NavigationComponent, CategoryComponent, AssessmentComponent, QuestionComponent],
+    NavigationComponent, CategoryComponent, AssessmentComponent, QuestionComponent, CodePanelComponent],
   imports: [BrowserModule, FontAwesomeModule, AppRouterModule
   ],
   providers: [],

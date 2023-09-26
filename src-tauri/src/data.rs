@@ -39,7 +39,7 @@ pub fn get_assessment_questions(id: i64) -> Vec<Question> {
         .map(|row| row.unwrap()){
         questions.push(
             Question {
-                code: row.read::<&str, _>("code").to_string(),
+                code: row.read::<&str, _>("code").to_string().lines().map(|line| line.to_string()).collect(),
                 question: row.read::<&str, _>("question").to_string(),
                 answer: row.read::<&str, _>("answer").to_string(),
             }
