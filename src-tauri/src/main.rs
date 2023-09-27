@@ -7,16 +7,16 @@ mod commands;
 mod data;
 mod assessment;
 
-use commands::get_speci_categories;
-use commands::get_assessment_questions;
+use commands::get_all_assessments_by_chapter;
+use commands::get_all_categories;
 
 
 fn main() {
     include_bytes!("../data/jav-speci");
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
-            get_speci_categories,
-            get_assessment_questions,
+            get_all_assessments_by_chapter,
+            get_all_categories
 
 
         ])

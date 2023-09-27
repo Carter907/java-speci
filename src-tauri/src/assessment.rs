@@ -3,5 +3,7 @@ use crate::question::Question;
 
 #[derive(Serialize, Deserialize)]
 pub struct Assessment {
-    questions: Vec<Question>
+    pub id: i64,
+    pub chapter: i64,
+    pub questions: Vec<Question>
 }
