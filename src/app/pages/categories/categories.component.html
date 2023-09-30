@@ -1,6 +1,5 @@
-
 <div class="m-10 icon-link w-fit fixed ">
-    <a  routerLink="">
+    <a routerLink="">
         <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
     </a>
 </div>
@@ -11,12 +10,33 @@
 </div>
 
 
-<div class="grid columns-2 px-10 m-4">
-    <a class="w-1/2 p-4 mb-4" *ngFor="let category of categories" [routerLink]="['/chapter', category.chapter]">
+<section class="flex flex-nowrap">
 
-        <app-category
-                [category]="category"
-        ></app-category>
-    </a>
 
-</div>
+    <div class="grid columns-2 px-10 m-4">
+        <a class="w-1/2 p-4 mb-4" *ngFor="let category of categories" [routerLink]="['/chapter', category.chapter]">
+
+            <app-category
+                    [category]="category"
+            ></app-category>
+        </a>
+
+    </div>
+
+    <section class="container flex-col p-20">
+
+        <div class="mb-10">
+
+            <fa-icon class="icon-link h-fit" [icon]="faPlus" (click)="addQuestionFormClick()"></fa-icon>
+        </div>
+
+        <div>
+
+            <app-add-question-form *ngIf="showAddQuestionForm"></app-add-question-form>
+        </div>
+
+    </section>
+
+
+</section>
+

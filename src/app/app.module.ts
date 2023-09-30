@@ -11,12 +11,14 @@ import { CategoryComponent } from './components/category/category.component';
 import { AssessmentComponent } from './pages/assessment/assessment.component';
 import { QuestionComponent } from './components/question/question.component';
 import { CodePanelComponent } from './components/code-panel/code-panel.component';
+import { AddQuestionFormComponent } from './components/add-question-form/add-question-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CategoriesComponent,
-    NavigationComponent, CategoryComponent, AssessmentComponent, QuestionComponent, CodePanelComponent],
-  imports: [BrowserModule, FontAwesomeModule, AppRouterModule
-  ],
+    NavigationComponent, CategoryComponent, AssessmentComponent, QuestionComponent, CodePanelComponent, AddQuestionFormComponent],
+    imports: [BrowserModule, FontAwesomeModule, AppRouterModule, FormsModule, ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

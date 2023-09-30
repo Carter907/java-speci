@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {Question} from "../model/question";
+import { invoke } from "@tauri-apps/api/tauri"
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,8 @@ import { Injectable } from '@angular/core';
 export class QuestionService {
 
   constructor() { }
+
+  addQuestion(question: Question) {
+
+  }
 }

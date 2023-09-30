@@ -1,0 +1,17 @@
+<div class="flex w-fit flex-wrap gap-10">
+    <div>
+
+        <label for="question">Question: </label>
+
+        <input class="bg-base-darker rounded" id="question" type="text" [formControl]="question">
+
+    </div>
+    <div>
+        <label for="code">Code: </label>
+        <input class="bg-base-darker rounded" id="code" type="text" [formControl]="code">
+    </div>
+
+    <button class="bg-base-darker shadow-md p-2 rounded" type="button" (click)="addQuestion()">
+        Add Question
+    </button>
+</div>

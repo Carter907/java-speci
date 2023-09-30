@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Category} from "../../model/category";
 import {invoke} from "@tauri-apps/api/tauri";
-import {faArrowLeft, faBackward} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft, faBackward, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 import {CategoryService} from "../../service/category.service";
 
@@ -13,6 +13,7 @@ import {CategoryService} from "../../service/category.service";
 export class CategoriesComponent implements OnInit {
     categories: Category[] = [];
 
+    showAddQuestionForm: boolean = false;
     constructor(private router: Router, private service: CategoryService) {
         service.get_all_categories().then(categories => {
             this.categories = categories;
@@ -28,5 +29,11 @@ export class CategoriesComponent implements OnInit {
 
     onClick() {
 
+    }
+
+    protected readonly faPlus = faPlus;
+
+    addQuestionFormClick() {
+        this.showAddQuestionForm = true;
     }
 }
