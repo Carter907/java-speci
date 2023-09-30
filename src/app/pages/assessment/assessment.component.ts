@@ -18,7 +18,6 @@ import {QuestionComponent} from "../../components/question/question.component";
 export class AssessmentComponent implements OnInit {
     chapter: number = 0;
     currentQuestion: Question = {
-        id: 0,
         code: [],
         question: '',
         answer: '',

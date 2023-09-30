@@ -9,7 +9,6 @@ import {QuestionService} from "../../service/question.service";
 })
 export class QuestionComponent {
     @Input() question: Question = {
-        id: 0,
         code: [],
         question: '',
         answer: ''

@@ -1,4 +1,4 @@
-<div class="flex w-fit flex-wrap gap-10">
+<div class="flex justify-center w-fit flex-wrap gap-10">
     <div>
 
         <label for="question">Question: </label>
@@ -9,6 +9,10 @@
     <div>
         <label for="code">Code: </label>
         <input class="bg-base-darker rounded" id="code" type="text" [formControl]="code">
+    </div>
+    <div>
+        <label for="answer">Answer: </label>
+        <input class="bg-base-darker rounded" id="answer" type="text" [formControl]="answer">
     </div>
 
     <button class="bg-base-darker shadow-md p-2 rounded" type="button" (click)="addQuestion()">
