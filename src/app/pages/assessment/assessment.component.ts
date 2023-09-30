@@ -8,6 +8,7 @@ import {Question} from "../../model/question";
 import {AssessmentService} from "../../service/assessment.service";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {Location} from "@angular/common";
+import {QuestionComponent} from "../../components/question/question.component";
 
 @Component({
     selector: 'app-assessment',
@@ -16,15 +17,18 @@ import {Location} from "@angular/common";
 })
 export class AssessmentComponent implements OnInit {
     chapter: number = 0;
-    assessmentId: number = 0;
-    assessment: Assessment = {
-        questions: []
-    };
     currentQuestion: Question = {
-        answer: '',
-        question: '',
+        id: 0,
         code: [],
+        question: '',
+        answer: '',
     };
+    assessment: Assessment = {
+        id: 0,
+        questions: [],
+        chapter: 0,
+    };
+
 
     constructor(private route: ActivatedRoute, private service: AssessmentService) {
 
@@ -32,19 +36,16 @@ export class AssessmentComponent implements OnInit {
             let chapterStr = params.get('chapter');
             this.chapter = chapterStr !== null ? Number.parseInt(chapterStr, 10) : 0;
 
-            let assessmentIdStr = params.get('id')
-            this.assessmentId = assessmentIdStr !== null ? Number.parseInt(assessmentIdStr, 10) : 0;
-
-
-            service.getAssessmentQuestions(this.assessmentId).then(questions => {
-                this.assessment.questions = questions.reverse();
-                this.setNextQuestion()
-                console.log(this.assessment.questions)
+            service.getAssessments(this.chapter).then(assessments => {
+                this.assessment = assessments[0];
+                this.setNextQuestion();
             })
+
         })
 
 
     }
+
     setNextQuestion() {
         const question = this.assessment.questions.pop();
         if (question === undefined) {

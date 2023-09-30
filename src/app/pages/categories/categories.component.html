@@ -12,7 +12,7 @@
 
 
 <div class="grid columns-2 px-10 m-4">
-    <a class="w-1/2 p-4 mb-4" *ngFor="let category of categories" [routerLink]="['/chapter-', category.chapter]">
+    <a class="w-1/2 p-4 mb-4" *ngFor="let category of categories" [routerLink]="['/chapter', category.chapter]">
 
         <app-category
                 [category]="category"

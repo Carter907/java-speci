@@ -16,7 +16,7 @@ pub fn get_all_categories() -> Vec<Category> {
         .map(|row| row.unwrap()) {
         categories.push(
             Category {
-                id: row.read::<i32, _>("id"),
+                id: row.read::<i64, _>("id"),
                 title: row.read::<&str, _>("title").to_string(),
                 description: row.read::<&str, _>("description").to_string(),
                 chapter: row.read::<i64, _>("chapter"),
@@ -67,7 +67,7 @@ fn get_assessment_questions(assessment_id: i64) -> Vec<Question> {
         .map(|row| row.unwrap()) {
         questions.push(
             Question {
-                id: row.read::<i32, _>("id"),
+                id: row.read::<i64, _>("id"),
                 code: row.read::<&str, _>("code").to_string().lines().map(|line| line.to_string()).collect(),
                 question: row.read::<&str, _>("question").to_string(),
                 answer: row.read::<&str, _>("answer").to_string(),

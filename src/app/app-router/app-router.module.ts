@@ -7,7 +7,7 @@ import {AssessmentComponent} from "../pages/assessment/assessment.component";
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'assessment/:chapter/:id', component: AssessmentComponent },
+    { path: 'chapter/:chapter', component: AssessmentComponent },
     { path: 'categories', component: CategoriesComponent },
 ]
 

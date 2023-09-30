@@ -12,6 +12,6 @@ export class CategoryService {
 
     get_all_categories(): Promise<Category[]> {
 
-        return invoke<Category[]>("get_speci_categories")
+        return invoke<Category[]>("get_all_categories")
     }
 }

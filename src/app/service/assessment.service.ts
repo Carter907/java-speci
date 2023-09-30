@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {invoke} from "@tauri-apps/api/tauri";
 import {Question} from "../model/question";
+import {Assessment} from "../model/assessment";
 
 
 
@@ -13,8 +14,8 @@ export class AssessmentService {
 
   }
 
-  getAssessmentQuestions(id: number): Promise<Question[]> {
+  getAssessments(chapter: number): Promise<Assessment[]> {
 
-    return invoke<Question[]>("get_assessment_questions", {id: id})
+    return invoke<Assessment[]>("get_all_assessments_by_chapter", {chapter: chapter})
   }
 }

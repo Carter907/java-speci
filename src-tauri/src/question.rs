@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Question {
-    pub id: i32,
+    pub id: i64,
     pub code: Vec<String>,
     pub question: String,
     pub answer: String,
