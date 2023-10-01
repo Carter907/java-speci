@@ -6,9 +6,11 @@ mod category;
 mod commands;
 mod data;
 mod assessment;
+mod dto;
 
 use commands::get_all_assessments_by_chapter;
 use commands::get_all_categories;
+use commands::add_question;
 
 
 fn main() {
@@ -16,7 +18,8 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             get_all_assessments_by_chapter,
-            get_all_categories
+            get_all_categories,
+            add_question,
 
 
         ])

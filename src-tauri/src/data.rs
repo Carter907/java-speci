@@ -1,6 +1,7 @@
-use sqlite::{Connection};
+use sqlite::{Connection, Value};
 use crate::assessment::Assessment;
 use crate::category::Category;
+use crate::dto::question_dto::QuestionDto;
 use crate::question::Question;
 
 pub fn get_all_categories() -> Vec<Category> {
@@ -27,10 +28,22 @@ pub fn get_all_categories() -> Vec<Category> {
 
     categories
 }
-pub fn add_question(question: Question, chapter: i64) {
-    let conn = Connection::open("data/jav-speci");
-    let query = "INSERT INTO questions VALUES"
+
+pub fn add_question(question: QuestionDto, chapter: i64) {
+    let conn = Connection::open("data/jav-speci").unwrap();
+
+    let id = get_all_assessments_by_chapter(chapter).pop().unwrap().id;
+
+    conn.execute(
+        format!(
+            "INSERT INTO questions(question, answer, code, assessment_id) VALUES ('{}', '{}', '{}', {});",
+            question.question,
+            question.answer,
+            question.code.join("' | char(10) | '\n"),
+            id
+        )).expect("failed to execute insert");
 }
+
 
 pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
     let mut assessments: Vec<Assessment> = vec![];
@@ -44,8 +57,8 @@ pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
         .bind((1, chapter))
         .unwrap()
         .map(|row| row.unwrap()) {
-        let (id, chapter)  = (row.read::<i64, _>("id"),
-            row.read::<i64, _>("chapter"));
+        let (id, chapter) = (row.read::<i64, _>("id"),
+                             row.read::<i64, _>("chapter"));
         assessments.push(
             Assessment {
                 id,

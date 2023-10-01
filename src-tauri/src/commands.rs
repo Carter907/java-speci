@@ -1,6 +1,7 @@
 use crate::assessment::Assessment;
 use crate::category::Category;
 use crate::data;
+use crate::dto::question_dto::QuestionDto;
 use crate::question::Question;
 
 #[tauri::command]
@@ -14,6 +15,6 @@ pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
 }
 
 #[tauri::command]
-pub fn add_question(question: Question, chapter: i64) {
+pub fn add_question(question: QuestionDto, chapter: i64) {
     data::add_question(question, chapter);
 }
