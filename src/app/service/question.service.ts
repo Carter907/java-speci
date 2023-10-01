@@ -9,7 +9,7 @@ export class QuestionService {
 
   constructor() { }
 
-  addQuestion(question: Question) {
-
+  addQuestion(question: Question, chapter: number) {
+    invoke("add_question", { question: question, chapter: chapter })
   }
 }

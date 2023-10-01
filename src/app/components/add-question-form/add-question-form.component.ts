@@ -12,12 +12,19 @@ export class AddQuestionFormComponent {
     question = new FormControl('');
     code = new FormControl('');
     answer = new FormControl('');
-
+    chapter = new FormControl(0);
     constructor(private questionService: QuestionService) {
 
     }
 
     addQuestion() {
+        this.questionService.addQuestion(
+            {
+                question: this.question.value!!,
+                code: this.code.value!!.split("\n"),
+                answer: this.answer.value!!
 
+            }, this.chapter.value!!
+        )
     }
 }

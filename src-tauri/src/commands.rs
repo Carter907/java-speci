@@ -12,3 +12,8 @@ pub fn get_all_categories() -> Vec<Category> {
 pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
    data::get_all_assessments_by_chapter(chapter)
 }
+
+#[tauri::command]
+pub fn add_question(question: Question, chapter: i64) {
+    data::add_question(question, chapter);
+}

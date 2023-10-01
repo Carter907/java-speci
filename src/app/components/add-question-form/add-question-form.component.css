@@ -1,0 +1,3 @@
+.input-field {
+    @apply  bg-base rounded p-2;
+}

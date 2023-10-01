@@ -27,6 +27,10 @@ pub fn get_all_categories() -> Vec<Category> {
 
     categories
 }
+pub fn add_question(question: Question, chapter: i64) {
+    let conn = Connection::open("data/jav-speci");
+    let query = "INSERT INTO questions VALUES"
+}
 
 pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
     let mut assessments: Vec<Assessment> = vec![];
