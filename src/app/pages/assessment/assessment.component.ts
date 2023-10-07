@@ -17,16 +17,12 @@ import {QuestionComponent} from "../../components/question/question.component";
 })
 export class AssessmentComponent implements OnInit {
     chapter: number = 0;
-    currentQuestion: Question = {
-        code: [],
-        question: '',
-        answer: '',
-    };
     assessment: Assessment = {
         id: 0,
         questions: [],
         chapter: 0,
     };
+    currentQuestionIndex = 0;
 
 
     constructor(private route: ActivatedRoute, private service: AssessmentService) {
@@ -37,7 +33,7 @@ export class AssessmentComponent implements OnInit {
 
             service.getAssessments(this.chapter).then(assessments => {
                 this.assessment = assessments[0];
-                this.setNextQuestion();
+
             })
 
         })
@@ -46,11 +42,19 @@ export class AssessmentComponent implements OnInit {
     }
 
     setNextQuestion() {
-        const question = this.assessment.questions.pop();
-        if (question === undefined) {
+
+        if (this.currentQuestionIndex >= this.assessment.questions.length - 1)
             return;
-        }
-        this.currentQuestion = question;
+
+        this.currentQuestionIndex++
+
+    }
+
+    goBackQuestion() {
+        if (this.currentQuestionIndex <= 0)
+            return;
+
+        this.currentQuestionIndex--;
     }
 
     ngOnInit(): void {
@@ -60,4 +64,6 @@ export class AssessmentComponent implements OnInit {
 
     protected readonly faArrowRight = faArrowRight;
     protected readonly faArrowLeft = faArrowLeft;
+
+
 }

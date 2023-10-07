@@ -3,15 +3,19 @@
 
     <div class="flex justify-around">
 
+        <a routerLink="/categories">
+            <div class="icon-link">
+
+                <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
+            </div>
+
+        </a>
         <div class="flex bg-base-darker rounded-full">
 
-            <a routerLink="/categories">
-                <div class="icon-link-ur rounded-l-full">
 
-                    <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
-                </div>
-
-            </a>
+            <button class="icon-link-ur rounded-l-full" (click)="goBackQuestion()">
+                <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
+            </button>
             <button class="icon-link-ur rounded-r-full" (click)="setNextQuestion()">
                 <fa-icon [icon]="faArrowRight" size="2x"></fa-icon>
             </button>
@@ -26,7 +30,7 @@
     </div>
 
 
-    <app-question [question]="currentQuestion"></app-question>
+    <app-question [question]="assessment.questions[currentQuestionIndex]"></app-question>
 
 
 
