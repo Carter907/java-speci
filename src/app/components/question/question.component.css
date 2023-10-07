@@ -1,6 +1,0 @@
-.question {
-   @apply container flex-col m-auto;
-}
-.question div {
-    @apply mb-5
-}

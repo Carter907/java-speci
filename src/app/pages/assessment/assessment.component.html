@@ -1,32 +1,35 @@
-<div class="p-10 flex-col h-screen overflow-clip">
+<div class=" p-4 overflow-clip">
 
 
-    <div class="container flex">
+    <div class="flex justify-around">
 
-        <a routerLink="/categories">
-            <div class="icon-link">
+        <div class="flex bg-base-darker rounded-full">
 
-                <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
-            </div>
+            <a routerLink="/categories">
+                <div class="icon-link-ur rounded-l-full">
 
-        </a>
+                    <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
+                </div>
 
-        <p class="text-4xl relative m-auto mb-3">
+            </a>
+            <button class="icon-link-ur rounded-r-full" (click)="setNextQuestion()">
+                <fa-icon [icon]="faArrowRight" size="2x"></fa-icon>
+            </button>
+        </div>
+
+
+        <p class="text-4xl">
             Chapter
             {{chapter}}
         </p>
 
     </div>
 
-    <div>
 
-        <app-question [question]="currentQuestion"></app-question>
-    </div>
+    <app-question [question]="currentQuestion"></app-question>
 
 
-    <button class="icon-link absolute w-fit h-fit left-1/2 top-3/4" (click)="setNextQuestion()">
-        <fa-icon [icon]="faArrowRight" size="2x"></fa-icon>
-    </button>
+
 
 
 </div>

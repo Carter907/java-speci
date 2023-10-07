@@ -31,8 +31,17 @@ pub fn get_all_categories() -> Vec<Category> {
 
 pub fn add_question(question: QuestionDto, chapter: i64) {
     let conn = Connection::open("data/jav-speci").unwrap();
+    let id: i64;
+    match get_all_assessments_by_chapter(chapter).pop() {
+        Some(assessment) => {
 
-    let id = get_all_assessments_by_chapter(chapter).pop().unwrap().id;
+            id = assessment.id;
+        }
+        None => {
+            add_assessment(chapter);
+            id = get_all_assessments_by_chapter(chapter).pop().unwrap().id;
+        }
+    }
 
     conn.execute(
         format!(
@@ -69,6 +78,16 @@ pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
     }
 
     assessments
+}
+
+fn add_assessment(chapter: i64) {
+    let mut conn = Connection::open("data/jav-speci").unwrap();
+    let mut statement = conn.prepare("INSERT INTO assessments(chapter) VALUES(?)")
+        .unwrap();
+    statement.bind((1, chapter)).expect("failed to bind");
+
+    statement.iter().next();
+
 }
 
 fn get_assessment_questions(assessment_id: i64) -> Vec<Question> {

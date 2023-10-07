@@ -1,11 +1,13 @@
-<div class="question p-4">
-    <div class="m-auto w-fit">
+<div class="p-4 gap-10 flex-col flex w-full justify-center items-center">
+    <div class="w-fit">
         <p class="text-2xl">{{question.question}}</p>
     </div>
+    <div class="w-1/2">
 
-    <app-code-panel [code]="question.code" *ngIf="question.code.length !== 0"></app-code-panel>
+        <app-code-panel [code]="question.code" *ngIf="question.code.length !== 0"></app-code-panel>
+    </div>
 
-    <div *ngIf="!showAnswer" class="m-auto w-fit">
+    <div *ngIf="!showAnswer" class="w-fit">
         <p>{{question.answer}}</p>
     </div>
 </div>

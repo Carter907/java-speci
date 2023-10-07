@@ -32,6 +32,14 @@ body {
     @apply p-4;
     @apply rounded-full;
 }
+.icon-link-ur {
+    @apply transition-colors duration-300;
+    @apply border-transparent;
+    @apply hover:bg-highlight;
+
+    @apply hover:text-base-darker;
+    @apply p-4;
+}
 .link p {
     @apply hover:text-blue-700 text-blue-500 transition-colors duration-300;
     @apply w-fit m-auto;

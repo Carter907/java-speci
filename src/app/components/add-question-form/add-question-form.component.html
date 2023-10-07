@@ -1,7 +1,7 @@
-<div class="flex justify-center w-fit flex-wrap gap-10 bg-base-darker p-4 rounded">
+<div class="flex-col shadow-2xl justify-center w-max flex-wrap gap-10 bg-base-darker p-4 rounded">
     <div>
         <label for="chapter">Chapter: </label>
-        <input class="input-field w-14" type="number" id="chapter" [formControl]="chapter">
+        <input class="input-field w-full" type="number" id="chapter" [formControl]="chapter">
     </div>
     <div>
 
@@ -17,8 +17,8 @@
         <label for="answer">Answer: </label>
         <input class="input-field w-full" id="answer" type="text" [formControl]="answer">
     </div>
-
-    <button class="bg-base-darker icon-link shadow-md p-2 rounded" type="button" (click)="addQuestion()">
+    <button class="bg-base-darker icon-link p-2 m-2 rounded" type="button" (click)="addQuestion()">
         Add Question
     </button>
+
 </div>

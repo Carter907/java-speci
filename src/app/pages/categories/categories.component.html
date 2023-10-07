@@ -1,19 +1,28 @@
-<div class="m-10 icon-link w-fit fixed ">
-    <a routerLink="">
+<div class="p-2 w-full fixed flex bg-base-darker top-0">
+    <a routerLink="" class="icon-link w-fit">
         <fa-icon [icon]="faArrowLeft" size="2x"></fa-icon>
     </a>
+    <div class="m-auto">
+
+        <p class="text-4xl w-fit">
+            Categories
+        </p>
+    </div>
+
+
+    <fa-icon *ngIf="!showAddQuestionForm" class="icon-link w-fit" [icon]="faPlus"
+             (click)="showAddQuestionForm = true" size="2x"></fa-icon>
+    <fa-icon *ngIf="showAddQuestionForm" class="icon-link w-fit" [icon]="faMinus"
+             (click)="showAddQuestionForm = false" size="2x"></fa-icon>
+
+
 </div>
-<div class="p-10 m-auto w-fit">
-    <p class="text-4xl w-fit">
-        Categories
-    </p>
-</div>
 
 
-<section class="flex flex-nowrap">
+<section class="flex 1/2 flex-nowrap mt-20">
 
 
-    <div class="grid columns-2 px-10 m-4">
+    <div class="grid columns-2 px-10">
         <a class="p-4 mb-4" *ngFor="let category of categories" [routerLink]="['/chapter', category.chapter]">
 
             <app-category
@@ -23,20 +32,9 @@
 
     </div>
 
-    <section class=" w-1/2 flex-col p-20">
 
-        <div class="mb-10">
-
-            <fa-icon class="icon-link h-fit" [icon]="faPlus" (click)="addQuestionFormClick()"></fa-icon>
-        </div>
-
-        <div>
-
-            <app-add-question-form *ngIf="showAddQuestionForm"></app-add-question-form>
-        </div>
-
-    </section>
-
+    <app-add-question-form *ngIf="showAddQuestionForm" [ngStyle]="{'opacity': showAddQuestionForm ? 100 : 0}"
+                           class="p-4 transition-opacity"></app-add-question-form>
 
 
 </section>

@@ -1,7 +1,7 @@
 [package]
 name = "jav-speci"
 version = "0.0.0"
-description = "A Tauri App"
+description = "Java Speci is a Java Learning Platform to be used in supplementation with the Java Oracle Specification. This version is based on the Java SE 21 Edition"
 authors = ["you"]
 license = ""
 repository = ""
