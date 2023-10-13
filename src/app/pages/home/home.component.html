@@ -1,18 +1,43 @@
 <app-navigation></app-navigation>
 
-<div class="center-flex-col">
+<div class="flex flex-col justify-center m-auto items-center w-fit bg-base-even-darker p-2">
+
 
     <div>
-        <span class="h-0.5">An In-Depth Java Specification Learning Experience</span>
+        <span class="h-0.5 opacity-50">An In-Depth Java Specification Learning Platform</span>
     </div>
-    <section class="m-10">
-        This application aims to familiarize you with the Java Lang Specification text found on
-        <a class="link" href="https://docs.oracle.com/javase/specs/index.html">
+
+    <div class="w-2/3">
+
+        <section class="m-10">
+            <h1 class="heading">Overview</h1>
             <p>
-                The Oracle Website
+                This application aims to familiarize you with the
+                Java Lang Specification text found on
             </p>
-        </a>
-    </section>
+            <div class="p-10">
+                <a class="link w-fit" href="" (click)="openJavaSpecs()">
+                    <p>
+                        The Oracle Website
+                    </p>
+                </a>
+            </div>
+
+                <p>
+                    Although these specifications are intimidatingly concise, you can explore this applications to become more familiar with
+                    the key concepts. clicking on the question mark will lead you to the questions categories section.
+                </p>
+        </section>
+
+        <section class="m-10">
+            <h1 class="heading">Categories</h1>
+            <p>
+                Categories are units of knowledge representing the Chapters in the specification. For instance, if you want to learn
+                more about how the JVM works, you would click on "Chapter 12. Execution"
+            </p>
+        </section>
+    </div>
+
 </div>
 
 

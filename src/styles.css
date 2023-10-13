@@ -6,6 +6,11 @@ body {
     @apply bg-base;
     color: #d0d5d9;
 }
+/* debugging section */
+/*div {*/
+/*    @apply border-2;*/
+/*}*/
+/* end of debugging section */
 
 
 .center-flex-col {
