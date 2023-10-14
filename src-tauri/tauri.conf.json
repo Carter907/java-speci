@@ -15,6 +15,10 @@
       "all": false,
       "fs": {
         "scope": ["$RESOURCE/data/jav-speci"]
+      },
+      "dialog": {
+        "message": true,
+        "confirm": false
       }
     },
 

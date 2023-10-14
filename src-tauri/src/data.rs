@@ -5,7 +5,7 @@ use crate::dto::question_dto::QuestionDto;
 use crate::question::Question;
 
 pub fn get_all_categories() -> Vec<Category> {
-    let conn = Connection::open("data/jav-speci").unwrap();
+    let conn = Connection::open("./data/jav-speci").unwrap();
 
     let query = "SELECT * FROM categories;";
     let mut categories = vec![];
@@ -30,7 +30,7 @@ pub fn get_all_categories() -> Vec<Category> {
 }
 
 pub fn add_question(question: QuestionDto, chapter: i64) {
-    let conn = Connection::open("data/jav-speci").unwrap();
+    let conn = Connection::open("./data/jav-speci").unwrap();
     let id: i64;
     match get_all_assessments_by_chapter(chapter).pop() {
         Some(assessment) => {
@@ -56,7 +56,7 @@ pub fn add_question(question: QuestionDto, chapter: i64) {
 
 pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
     let mut assessments: Vec<Assessment> = vec![];
-    let conn = Connection::open("data/jav-speci");
+    let conn = Connection::open("./data/jav-speci");
     let query = "SELECT * FROM assessments WHERE chapter = ?";
 
     for row in conn.unwrap()
@@ -81,7 +81,7 @@ pub fn get_all_assessments_by_chapter(chapter: i64) -> Vec<Assessment> {
 }
 
 fn add_assessment(chapter: i64) {
-    let mut conn = Connection::open("data/jav-speci").unwrap();
+    let mut conn = Connection::open("./data/jav-speci").unwrap();
     let mut statement = conn.prepare("INSERT INTO assessments(chapter) VALUES(?)")
         .unwrap();
     statement.bind((1, chapter)).expect("failed to bind");
@@ -92,7 +92,7 @@ fn add_assessment(chapter: i64) {
 
 fn get_assessment_questions(assessment_id: i64) -> Vec<Question> {
     let mut questions: Vec<Question> = vec![];
-    let conn = Connection::open("data/jav-speci");
+    let conn = Connection::open("./data/jav-speci");
     let query = "SELECT * FROM questions WHERE assessment_id = ?";
     for row in conn.unwrap()
         .prepare(query)

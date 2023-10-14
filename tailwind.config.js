@@ -9,9 +9,7 @@ module.exports = {
         'base-even-darker': '#23242a',
         'highlight': '#1982ff',
         'highlighter': '#98c6ff',
-
       }
-
     },
   },
   plugins: [],
