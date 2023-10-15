@@ -1,7 +1,19 @@
-# Tauri + Angular
+# What is Java Speci?
 
-This template should help get you started developing with Tauri and Angular.
+Java Speci is a specification learning platform for Java. If you want to familarize yourself with the content of the Java Specification to become more comfortable with the Java ecosystem, you've come to the right place! Read the java specification convert-to-cover and this application with help you test yourself every step of the way. The current app is based on **JAVA SE 21**.
 
-## Recommended IDE Setup
+# What is jp?
 
-[VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) + [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
+Java points are points awarded from answering questions right in throughout your learning journey. once points accumulate, you'll gain access to the next chapter in the categories page.
+
+# How does it work?
+
+Although there has yet to be an official release, the structure of the expected structure of the application is as follows: 
+* create an account (accounts are stored locally in an sqlite database)
+* start answering questions
+* earn jp
+* earn 10,000 jp to take the final exam
+
+# What is the final exam?
+
+The final exam is the final boss of your learning journey, once you gain access to it you should be fairly accustomed to the contents of the java specification for Java 21. You can take the exam to get a grade. This grade will be displayed on your profile and you can share it will friends and compete. 
