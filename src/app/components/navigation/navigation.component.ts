@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {faCoffee, faHome, faQuestion} from "@fortawesome/free-solid-svg-icons";
+import {faCoffee, faEdit, faHome, faPerson, faQuestion, faUser} from "@fortawesome/free-solid-svg-icons";
+import {faAccusoft} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-navigation',
@@ -9,6 +10,7 @@ import {faCoffee, faHome, faQuestion} from "@fortawesome/free-solid-svg-icons";
 export class NavigationComponent {
 
     protected readonly faQuestion = faQuestion;
-    protected readonly faHome = faHome;
     protected readonly faCoffee = faCoffee;
+    protected readonly faUser = faUser;
+    protected readonly faEdit = faEdit;
 }
