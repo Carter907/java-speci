@@ -10,10 +10,7 @@
     </div>
 
 
-    <fa-icon *ngIf="!showAddQuestionForm" class="icon-link w-fit" [icon]="faPlus"
-             (click)="showAddQuestionForm = true" size="2x"></fa-icon>
-    <fa-icon *ngIf="showAddQuestionForm" class="icon-link w-fit" [icon]="faMinus"
-             (click)="showAddQuestionForm = false" size="2x"></fa-icon>
+
 
 
 </div>
@@ -31,11 +28,6 @@
         </a>
 
     </div>
-
-
-    <app-add-question-form *ngIf="showAddQuestionForm" [ngStyle]="{'opacity': showAddQuestionForm ? 100 : 0}"
-                           class="p-4 transition-opacity"></app-add-question-form>
-
 
 </section>
 

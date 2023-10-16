@@ -13,6 +13,10 @@ import {QuestionComponent} from './components/question/question.component';
 import {CodePanelComponent} from './components/code-panel/code-panel.component';
 import {AddQuestionFormComponent} from './components/add-question-form/add-question-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { SortQuestionsByDateAddedPipe } from './pipes/sort-questions-by-date-added.pipe';
+import { EditAssessmentsComponent } from './pages/edit-assessments/edit-assessments.component';
+import {EditQuestionsComponent} from "./pages/edit-questions/edit-questions.component";
+import {EditCategoriesComponent} from "./pages/edit-categories/edit-categories.component";
 
 @NgModule({
     declarations: [
@@ -24,7 +28,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         AssessmentComponent,
         QuestionComponent,
         CodePanelComponent,
-        AddQuestionFormComponent
+        AddQuestionFormComponent,
+        SortQuestionsByDateAddedPipe,
+        EditAssessmentsComponent,
+        EditQuestionsComponent,
+        EditCategoriesComponent
     ],
     imports: [
         BrowserModule,
@@ -37,5 +45,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     bootstrap: [
         AppComponent
     ],
+    exports: [
+        AddQuestionFormComponent
+    ]
 })
 export class AppModule {}

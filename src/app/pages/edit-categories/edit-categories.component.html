@@ -1,1 +1,12 @@
 <p>edit-categories works!</p>
+<fa-icon *ngIf="!showAddQuestionForm" class="icon-link w-fit" [icon]="faPlus"
+         (click)="showAddQuestionForm = true" size="2x"></fa-icon>
+
+<fa-icon *ngIf="showAddQuestionForm" class="icon-link w-fit" [icon]="faMinus"
+         (click)="showAddQuestionForm = false" size="2x"></fa-icon>
+
+
+
+<app-add-question-form *ngIf="showAddQuestionForm"
+                       class="p-4 transition-opacity"></app-add-question-form>
+

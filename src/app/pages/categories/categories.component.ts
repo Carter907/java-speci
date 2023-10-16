@@ -13,7 +13,6 @@ import {CategoryService} from "../../service/category.service";
 export class CategoriesComponent implements OnInit {
     categories: Category[] = [];
 
-    showAddQuestionForm: boolean = false;
     constructor(private router: Router, private service: CategoryService) {
         service.get_all_categories().then(categories => {
             this.categories = categories;
@@ -24,15 +23,7 @@ export class CategoriesComponent implements OnInit {
 
     }
 
-    protected readonly faBackward = faBackward;
     protected readonly faArrowLeft = faArrowLeft;
 
-    onClick() {
 
-    }
-
-    protected readonly faPlus = faPlus;
-
-
-    protected readonly faMinus = faMinus;
 }
